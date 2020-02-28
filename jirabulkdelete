@@ -28,7 +28,7 @@ with open(filepath, 'r') as f:
 		
         auth = HTTPBasicAuth(username, password)
         headers = { "Accept": "application/json" }
-        connect = requests.request("GET", url, headers=headers, auth=auth)
+        connect = requests.request("GET", url, headers=headers, auth=auth, timeout=100000)
         josn_check = json.loads(connect.text)
 		
         for second in josn_check:
